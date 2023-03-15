@@ -1,0 +1,7 @@
+{
+  "name": "ionic-wallet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
