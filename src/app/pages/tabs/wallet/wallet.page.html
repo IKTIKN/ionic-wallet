@@ -1,0 +1,82 @@
+<app-main-toolbar title="Wallet"></app-main-toolbar>
+
+<ion-content [fullscreen]="true">
+
+    <div class="container">
+    
+        <ion-grid>
+            <ion-row>
+    
+                <ion-col size="12" size-sm="6">
+    
+                    <ion-card class="transparant-background">
+                        <ion-card-header>
+                            <ion-card-title>Balance</ion-card-title>
+                        </ion-card-header>
+    
+                        <ion-card-content>
+    
+                            <ion-item lines="none">
+                                <ion-icon name="logo-usd" slot="start"></ion-icon>
+    
+                                <ion-label class="" >
+                                    
+                                </ion-label>
+                                <span class="huge">59.98</span> 
+                            </ion-item>
+    
+                            <ion-item lines="none" class="">
+                                <ion-icon  color="primary" name="logo-bitcoin" slot="start"></ion-icon>
+    
+                                <ion-label class="" color="" >
+                                    
+                                </ion-label> 
+                                <span class="big orange">0.00000025</span> 
+    
+                            </ion-item>
+    
+                            Here's a small text description for the card content. Nothing more, nothing less.
+                        </ion-card-content>
+    
+                        <ion-button fill="clear" click="bitcoin.generateAddress()">New payment</ion-button>
+                        <ion-button fill="clear">Receive</ion-button>
+                    </ion-card>
+                </ion-col>
+    
+    
+                <ion-col size="12" size-sm="6">
+                    <ion-card class="transparant-background">
+                        <ion-card-header>
+                            <ion-card-title>Assets</ion-card-title>
+                        </ion-card-header>
+    
+                        <ion-card-content>
+                            <ion-list>
+                                <ion-item lines="none">
+                                    <ion-avatar slot="start">
+                                        <img alt="Silhouette of a person's head" src="assets/logos/1.png" />
+                                      </ion-avatar>
+                                    <ion-label>BTC</ion-label>0.00000025
+                                </ion-item>
+    
+                                <ion-item lines="none">
+                                    <ion-avatar slot="start">
+                                        <img alt="Silhouette of a person's head" src="assets/logos/2.png" />
+                                      </ion-avatar>
+                                    <ion-label>LTC</ion-label>
+                                </ion-item>
+    
+                            </ion-list>
+                        </ion-card-content>
+                    </ion-card>
+    
+                </ion-col>
+    
+            </ion-row>
+    
+
+        </ion-grid>
+    </div>
+ 
+
+</ion-content>

@@ -9,15 +9,19 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../wallet/wallet.module').then(m => m.WalletPageModule)
+        loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletPageModule)
+      },
+      {
+        path: 'addresses',
+        loadChildren: () => import('./addresses/addresses.module').then(m => m.AddressesPageModule)
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('./tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
         path: '',
@@ -30,6 +34,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
+  },
+  {
+    path: 'addresses',
+    loadChildren: () => import('./addresses/addresses.module').then( m => m.AddressesPageModule)
   }
 ];
 

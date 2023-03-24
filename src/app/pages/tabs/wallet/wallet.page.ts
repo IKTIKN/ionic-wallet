@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BitcoinService } from '../../../services/bitcoin.service';
 
 @Component({
   selector: 'app-wallet',

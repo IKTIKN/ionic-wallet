@@ -6,6 +6,8 @@ import { WalletPage } from './wallet.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { WalletPageRoutingModule } from './wallet-routing.module';
+import { MainToolbarComponent } from 'src/app/components/main-toolbar/main-toolbar.component';
+import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -13,7 +15,8 @@ import { WalletPageRoutingModule } from './wallet-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    WalletPageRoutingModule
+    WalletPageRoutingModule,
+    SharedModule
   ],
   declarations: [WalletPage]
 })
