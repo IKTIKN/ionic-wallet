@@ -5,35 +5,19 @@ import { ECPairFactory, ECPairInterface } from 'ecpair';
 import * as ecc from 'tiny-secp256k1';
 import * as bip39 from 'bip39';
 import { BIP32Factory, BIP32Interface } from 'bip32';
+import { KeyPair, Wallet } from '../wallet/wallet.service';
 
 const ECPair = ECPairFactory(ecc);
 const bip32 = BIP32Factory(ecc);
 
-export interface KeyPair {
-    address: string;
-    wif: string;
-}
 
-export interface Wallet {
-    addressType: string;
-    keyPair: KeyPair;
-    balance: number;
-    balanceFiat: number;
-    transactions: number;
-}
 
 @Injectable({
     providedIn: 'root'
 })
 export class BitcoinService {
 
-    wallet: Wallet[] = [];
-
-    constructor() {
-        this.wallet = this.generateBip32Wallet('praise you muffin lion enable neck grocery crumble super myself license ghost');
-        console.log(this.wallet);
-    }
-
+    constructor() { }
 
     private getAddress(
         publicKey: Buffer, 
@@ -149,13 +133,14 @@ export class BitcoinService {
     }
 
     
-    private setWallet(type: string, pair: KeyPair, balance: number = 0.00000001, fiat: number = 0, tx: number = 0): Wallet {
+    private setWallet(type: string, pair: KeyPair): Wallet {
         return {
             addressType: type,
             keyPair: pair,
-            balance: balance,
-            balanceFiat: fiat,
-            transactions: tx
+            balance: 0,
+            received: 0,
+            sent: 0,
+            transactions: 0
         }
     }
 
