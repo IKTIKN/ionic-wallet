@@ -1,12 +1,12 @@
 export interface MultiAddressResponse {
-    addresses: Address[]
-    wallet: Wallet
+    addresses: AddressResponse[]
+    wallet: Balance
     txs: Tx[]
     info: Info
     recommend_include_fee: boolean
   }
   
-  export interface Address {
+  export interface AddressResponse {
     address: string
     final_balance: number
     n_tx: number
@@ -14,7 +14,7 @@ export interface MultiAddressResponse {
     total_sent: number
   }
   
-  export interface Wallet {
+  export interface Balance {
     final_balance: number
     n_tx: number
     n_tx_filtered: number
