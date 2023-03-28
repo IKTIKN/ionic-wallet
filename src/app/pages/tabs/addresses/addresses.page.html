@@ -1,32 +1,18 @@
 <app-main-toolbar title="Public keys"></app-main-toolbar>
-
-
 <ion-content>
-
     <div class="container">
-        <ion-card class="transparant-background">
-            
-            <ion-item *ngFor="let wallet of bitcoin.wallet" button detail="true" lines="none" >
-                
+        <ion-card *ngFor="let w of wallet.wallet" class="transparant-background">
+            <ion-item  button detail="true" lines="none" >
                 <ion-label>
-
-                    <h3>{{ wallet.keyPair.address }}</h3>
-
+                    <h3>{{ w.keyPair.address }}</h3>
                     <p> 
-                        <span [ngClass]="wallet.addressType=='change' ? 'label-orange' : 'label-green'">{{ wallet.addressType }}</span>
+                        <span [ngClass]="w.addressType=='change' ? 'label-orange' : 'label-green'">{{ w.addressType }}</span>
 
-                        Balance: <span class="white">0.0000000</span> 
-                        Tx: <span class="white">{{ wallet.transactions }}</span>
-
+                        Balance: <span class="white">{{ w.balance | number:'1.8' }}</span> 
+                        Tx: <span class="white">{{ w.transactions }}</span>
                     </p>
-    
                 </ion-label>
-                 
-    
             </ion-item>
         </ion-card>
     </div>
-
-
-
 </ion-content>

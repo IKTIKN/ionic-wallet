@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BitcoinService } from 'src/app/services/bitcoin.service';
+import { WalletService } from 'src/app/services/wallet/wallet.service';
 
 @Component({
   selector: 'app-addresses',
@@ -8,7 +8,7 @@ import { BitcoinService } from 'src/app/services/bitcoin.service';
 })
 export class AddressesPage implements OnInit {
 
-  constructor(public bitcoin: BitcoinService) { }
+  constructor(public wallet: WalletService) { }
 
   ngOnInit() {
   }
