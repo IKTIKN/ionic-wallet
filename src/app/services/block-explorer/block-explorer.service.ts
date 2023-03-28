@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { MultiAddressResponse } from 'src/app/interfaces/ResponseInterfaces';
-import { Wallet } from '../bitcoin/bitcoin.service';
+import { Wallet } from '../wallet/wallet.service';
 
 export interface Address {
     hash160: string;
@@ -59,7 +59,6 @@ export class BlockExplorerService {
 
     constructor(private http: HttpClient) { }
 
-    
     getSingleAddress(address: string): Observable<Address> {
         const url = this.baseUrl.concat("rawaddr/".concat(address));
         console.log(url)
@@ -74,6 +73,7 @@ export class BlockExplorerService {
     getMultiAddress(wallet: Wallet[]): Observable<MultiAddressResponse> {
         const addressesUrl = this.convertToUrlString(wallet);
         const url = this.baseUrl.concat("multiaddr?active=".concat(addressesUrl));
+
         return this.http.get<MultiAddressResponse>(url)
             .pipe(
                 retry(this.retry),
