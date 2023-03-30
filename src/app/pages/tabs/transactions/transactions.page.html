@@ -1,0 +1,51 @@
+<app-main-toolbar title="Transactions"></app-main-toolbar>
+<ion-content [fullscreen]="true">
+    <div class="container">
+        <ion-card *ngFor="let tx of wallet.tx" class="transparant-background">
+
+
+            <ion-item lines="none" detail="false">
+                <ion-label>
+                    <!-- <h3>{{ tx.hash }}</h3> -->
+                    ID: <span class="white">{{ tx.hash }}</span>
+                    <p>
+                        {{ tx.time * 1000 | date:'medium' }}
+                    </p>
+                </ion-label>
+            </ion-item>
+
+
+            <ion-item lines="none" detail="false" class="no-margin-top">
+                <ng-container *ngIf="tx.result > 0; else down;">
+                    <ion-icon color="success" name="trending-up-outline" slot="start"></ion-icon>
+                </ng-container>
+                <ng-template #down>
+                    <ion-icon color="danger" name="trending-down-outline" slot="start"></ion-icon>
+                </ng-template>
+                <ion-label></ion-label>
+                <span [ngClass]="tx.result > 0 ? 'success' : 'danger'">{{ tx.result / 100000000 | number:'1.8'}}</span>
+            </ion-item>
+            <!-- <ion-item lines="none">
+                <ion-label>
+                    Fee
+                </ion-label>
+                {{ tx.fee / 100000000 }}
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-label>
+                    Result
+                </ion-label>
+                <span class="ion-color-success">{{ tx.result / 100000000 }}</span>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-label>
+                    Balance
+                </ion-label>
+                {{ tx.balance / 100000000 }}
+            </ion-item> -->
+
+        </ion-card>
+    </div>
+</ion-content>
