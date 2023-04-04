@@ -4,11 +4,11 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'wallet',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'balance',
         loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletPageModule)
       },
       {
@@ -16,8 +16,8 @@ const routes: Routes = [
         loadChildren: () => import('./addresses/addresses.module').then(m => m.AddressesPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('./tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'transactions',
+        loadChildren: () => import('./transactions/transactions.module').then(m => m.TransactionsPageModule)
       },
       {
         path: 'tab3',
@@ -25,14 +25,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/wallet/balance',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/wallet/balance',
     pathMatch: 'full'
   },
   {
