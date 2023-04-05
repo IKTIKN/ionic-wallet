@@ -32,7 +32,8 @@
               }
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": ["bitcoinjs-lib","ecpair", "bip32", "bip39"]
           },
           "configurations": {
             "production": {
@@ -78,9 +79,6 @@
             },
             "development": {
               "browserTarget": "app:build:development"
-            },
-            "ci": {
-              "progress": false
             }
           },
           "defaultConfiguration": "development"
