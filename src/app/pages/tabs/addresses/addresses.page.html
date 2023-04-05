@@ -6,10 +6,24 @@
                 <ion-label>
                     <h3>{{ w.keyPair.address }}</h3>
                     <p> 
-                        <span [ngClass]="w.addressType=='change' ? 'label-orange' : 'label-green'">{{ w.addressType }}</span>
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <span class="small label" [ngClass]="w.addressType=='change' ? 'orange' : 'green'">
+                                        {{ w.addressType }}
+                                    </span>
+                                </ion-col>
 
-                        Balance: <span class="white">{{ w.balance | number:'1.8' }}</span> 
-                        Tx: <span class="white">{{ w.transactions }}</span>
+                                <ion-col>
+                                    <span class="white">{{ w.balance | number:'1.8' }}</span> 
+                                </ion-col>
+
+                                <ion-col>
+                                    <span class="x-small">Tx: </span>
+                                    <span class="white">{{ w.transactions }}</span>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
                     </p>
                 </ion-label>
             </ion-item>

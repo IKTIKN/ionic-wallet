@@ -3,23 +3,31 @@
     font-size: small;
 }
 
-p {
-    font-size: x-small;
+.label {
+    padding: 4px;
+    // margin-right: 8px;
+    border-radius: 2px;
 }
 
-.label-green {
-    color: green;
-    width: fit-content;
-    padding: 1px 4px;
-    background-color: rgba(0, 128, 0, 0.2);
-    margin-right: 4px;
+.green {
+    color: var(--ion-color-success);
+    background-color: rgba(var(--ion-color-success-rgb), 0.2);
+
 }
 
-.label-orange {
-    color: orange;
-    background-color: rgba(255, 166, 0, 0.2);
-    width: fit-content;
-    padding: 1px 4px;
-    margin-right: 4px;
+.orange {
+    color: var(--ion-color-primary);
+    background-color: rgba(var(--ion-color-primary-rgb), 0.2);
+}
 
+.align-start {
+    text-align: start;
+}
+
+ion-col {
+    text-align: start;
+    max-width: fit-content!important;
+    max-height: fit-content!important;
+    padding-right: 8px!important;
+    // border: 1px solid salmon;
 }
