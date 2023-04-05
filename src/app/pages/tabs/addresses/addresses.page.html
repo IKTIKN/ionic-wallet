@@ -2,7 +2,7 @@
 <ion-content>
     <div class="container">
         <ion-card *ngFor="let w of wallet.wallet" class="transparant-background">
-            <ion-item  button detail="true" lines="none" >
+            <ion-item  button detail="true" lines="none">
                 <ion-label>
                     <h3>{{ w.keyPair.address }}</h3>
                     <p> 
@@ -13,11 +13,9 @@
                                         {{ w.addressType }}
                                     </span>
                                 </ion-col>
-
                                 <ion-col>
                                     <span class="white">{{ w.balance | number:'1.8' }}</span> 
                                 </ion-col>
-
                                 <ion-col>
                                     <span class="x-small">Tx: </span>
                                     <span class="white">{{ w.transactions }}</span>
