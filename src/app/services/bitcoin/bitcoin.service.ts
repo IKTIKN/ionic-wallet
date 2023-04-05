@@ -122,7 +122,7 @@ export class BitcoinService {
         const root = bip32.fromSeed(seed);
 
         for (let x=0; x<totalAddresses; x++) {
-            wallet.push(this.setWallet("receiving", this.deriveKeyPair(root, "m/0'/0/", x)));
+            wallet.push(this.setWallet("receive", this.deriveKeyPair(root, "m/0'/0/", x)));
         }
 
         for (let x=0; x<10; x++) {
